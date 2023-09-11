@@ -160,9 +160,9 @@ function useSymbolIterator(obj) {
   let result = [];
 
   for (let value of obj) {
-    result = [...obj];
-    return result;
+    result = [...result, value];
   }
+  return result;
 }
 
 log("Завдання 9 ====================================");
@@ -206,20 +206,9 @@ let myObject = {
     }
   },
 };
-function useSymbolIteratorS(obj) {
-  // Проходимо крізь елементи об'єкта obj, використовуючи цикл "for...of"
-  // Додаємо кожне значення до масиву "result"
-  // Повертаємо масив зі значеннями
-  let result = [];
-
-  for (let value of obj) {
-    result = [value, ...obj];
-    return result;
-  }
-}
 
 console.log("Завдання 10 ====================================");
-console.log(useSymbolIteratorS(myObject)); //Виведе [ 'apple', 'banana', 'orange', 'grape', 'mango' ]
+console.log(useSymbolIterator(myObject)); //Виведе [ 'apple', 'banana', 'orange', 'grape', 'mango' ]
 
 // {
 //   let phoneBook = {};
